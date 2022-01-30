@@ -1,38 +1,209 @@
-.App {
-  text-align: center;
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient( hsl(214, 47%, 23%) , hsl(237, 49%, 15%));
+    width: 100%;
+    background-repeat: repeat-x;
+    background-size: cover;
+    overflow-x: hidden;
+    height: 100vh;
+
+}
+/* 
+topbar
+
+
+*/
+
+.topbar{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 25vw;
+    padding: 10px 20px;
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 20px;
+    border: 3px solid #ffffff;
+}
+@media (max-width:800px) {
+    
+    body{
+        font-size: 16px;
+    }
+    
+    .topbar{
+        font-size: 1rem;
+        margin: 10px 10vw;
+    }
+
+    .element{
+        margin: 0;
+    }
+}
+.score{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: #ffffff;
+    padding: 5px 25px;
+    text-align: center;
+    font-weight: 700;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.heading p{
+    color: #ffffff;
+}
+.heading p, .score{
+    line-height: 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mainpage{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.mainpage img{
+    background-color: white;
+    width: 120px;
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+  
+}
+.mainpage img:hover{
+    box-shadow: 2px 2px 20px gray;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.rock{
+    border: 10px solid yellow;
+    margin-top:2vh 8vw;
+   
+}
+.scissior{
+    border: 10px solid red;
+    margin:2vh 8vw;
+}
+.box2 img{
+    border: 10px solid blue;
+    margin:2vh 8vw 2vh 0vh;
+}
+.select{
+    font-size: 30px;
+    color: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width:800px) {
+    .mainpage img{
+        width:50px;
+    }
+    
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 
+lastpage
+
+*/
+.lastpage{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+
+}
+.element{
+    margin: 0vh 5vw 2vh 0vw;
+    color: #ffffff;
+    text-align: center;
+    padding: 0px 20px;
+}
+.user{
+    border: 15px solid yellow;
+    background-color: white;
+    width: 10vw;
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.oppont{
+    border: 15px solid blue;
+    background-color: white;
+    width: 10vw;
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.element p{
+    font-size: 2rem;
+    text-align: center;
+    padding:  0 20px;
+    padding: 0 10px;
+}
+.playagain{
+    padding: 10px 25px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: rgb(252, 199, 27);
+    border-radius: 10px;
+    color: #313131;
+    margin-top: 2rem;
+}
+.playagain:hover{
+    background-color: yellow;
+    color: black;
+}
+.declear{
+    color: #ffffff;
+    text-align: center;
+    margin-top: 8vh;
+    font-size: 30px;
+}
+.footer button{
+    float: right;
+   background-color: transparent;
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    margin-top: 10vh;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+}
+
+.rules{
+    position: fixed;
+    width: 30vw;
+    height: 50vh;
+    top: 24vh;
+    left: 35vw;
+    border-radius: 10px;
+    
+}
+.rules img{
+    background-color: #ffffff;
+}
+.close img{
+    float: right;
+    cursor: pointer;
+}
+.img-rule{
+    width: 100%;
+}
+.close{
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    background-color: black;
+}
+
+@media (max-width:800px) {
+    .element{
+        padding: 0;
+        font-size: 7px;
+    }
+
+    .rules{
+        width: 60vw;
+    }
 }

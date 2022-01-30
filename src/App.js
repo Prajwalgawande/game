@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React,{useState} from 'react';
 import './App.css';
+import Footer from './Components/Footer';
+import Lastpage from './Components/Lastpage';
+import Frontpage from './Components/Frontpage'
+import Score from './Components/Score'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
+const App = () => {
+  const [score, setscore] = useState(isNaN(localStorage.getItem("score"))?0:localStorage.getItem('score'));
+  const [choice, setchoice] = useState('rock');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    
+    <Router>
+      <Score score={score}/>
+      <Routes>
+        <Route path="/" element={<Frontpage setchoice={setchoice} />}/>
+      <Route path="/Result" element={<Lastpage setscore={setscore}  score={score} choice={choice}/>}/>
+      </Routes>
+      <Footer/>
+      </Router>
+    )
+    ;
+};
 
 export default App;
+
